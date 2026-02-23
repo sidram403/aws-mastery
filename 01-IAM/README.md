@@ -11,6 +11,8 @@ It controls:
 - On which resources
 - Under what conditions
 
+---
+
 ## 2️⃣ Why IAM is Important
 
 Every request to AWS must be authenticated and authorized.
@@ -22,6 +24,8 @@ Without IAM:
 - Resources are not secure.
 
 IAM acts as the foundation of AWS security.
+
+---
 
 ## 3️⃣ Core Components of IAM
 
@@ -42,6 +46,8 @@ IAM consists of:
 | Credentials    | Long-term (Access Key + Secret Key)  | Temporary credentials                  |
 | Used For       | Human users or external apps         | AWS services, cross-account access     |
 | Security Level | Lower (manual key rotation required) | Higher (automatic credential rotation) |
+
+---
 
 ## 5️⃣ IAM Policies
 
