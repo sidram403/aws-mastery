@@ -78,3 +78,19 @@ It specifies:
 ```
 
 This policy allows uploading objects to a specific S3 bucket.
+
+---
+
+## 6️⃣ IAM Authorization Model
+
+AWS follows a strict authorization logic:
+
+1. Implicit Deny (default)
+2. Explicit Allow (via policy)
+3. Explicit Deny (overrides everything)
+
+### Evaluation Rule
+
+Explicit Deny > Explicit Allow > Implicit Deny
+
+If no policy allows an action, it is denied by default.
