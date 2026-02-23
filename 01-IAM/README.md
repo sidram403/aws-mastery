@@ -94,3 +94,25 @@ AWS follows a strict authorization logic:
 Explicit Deny > Explicit Allow > Implicit Deny
 
 If no policy allows an action, it is denied by default.
+
+---
+
+## 7️⃣ Managed Policy vs Inline Policy
+
+### Inline Policy
+
+- Attached directly to a single user, role, or group
+- Not reusable
+- Deleted automatically if the identity is deleted
+- Best for very specific permissions
+
+### Managed Policy
+
+- Created once and reusable
+- Can be attached to multiple users, roles, or groups
+- Easier to maintain in large organizations
+- Supports centralized permission management
+
+### Best Practice
+
+Use Managed Policies in large organizations to ensure scalability and easier maintenance.
