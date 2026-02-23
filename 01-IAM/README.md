@@ -116,3 +116,42 @@ If no policy allows an action, it is denied by default.
 ### Best Practice
 
 Use Managed Policies in large organizations to ensure scalability and easier maintenance.
+
+---
+
+## 8️⃣ Principle of Least Privilege (PoLP)
+
+The Priniciple of Least Privilege means:
+
+Give only the minimum permissions required to perform a task - nothing more.
+
+### Example (Bad Practice)
+
+```json
+{
+  "Effect": "Allow",
+  "Action": "s3:*",
+  "Resource": "*"
+}
+```
+
+This grants full access and increases security risk.
+
+### Example (Good Practice)
+
+```json
+{
+  "Effect": "Allow",
+  "Action": "s3:PutObject",
+  "Resource": "arn:aws:s3:::my-bucket/*"
+}
+```
+
+This grants only the required permission.
+
+### Why It Matters
+
+- Reduces security risk
+- Limits blast redius
+- Prevents accidental misuse
+- Follows AWS security best practices
