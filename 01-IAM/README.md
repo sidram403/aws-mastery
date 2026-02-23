@@ -155,3 +155,27 @@ This grants only the required permission.
 - Limits blast redius
 - Prevents accidental misuse
 - Follows AWS security best practices
+
+---
+
+## 9️⃣ IAM Groups
+
+IAM Groups are used to manage permissions for multiple users at once.
+
+Instead of attaching policies individually to each user, you:
+
+1. Create a group (e.g., Developers, QA, DevOps)
+2. Attach policies to the group
+3. Add users to the group
+
+### Benefits
+
+- Centralized permission management
+- Easier role changes
+- Scalable for large organizations
+- Reduces manual errors
+
+### Important Note
+
+- IAM Groups can only contain IAM Users.
+- IAM Roles cannot be added to IAM Groups.
