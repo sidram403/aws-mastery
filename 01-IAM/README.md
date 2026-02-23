@@ -179,3 +179,34 @@ Instead of attaching policies individually to each user, you:
 
 - IAM Groups can only contain IAM Users.
 - IAM Roles cannot be added to IAM Groups.
+
+---
+
+## 🔟 IAM Role for EC2 (Instance Profile)
+
+When deploying applications on EC2, AWS recommends using IAM Roles instead of IAM Users.
+
+### Why Not IAM Users?
+
+- Requires storing Access Key + Secret Key
+- Risk of credential leakage
+- Manual key rotation required
+- Violates security best practices
+
+### Why IAM Roles?
+
+- Provide temporary credentials
+- No hardcoded secrets in `.env`
+- Automatic credential rotation
+- More secure for production workloads
+
+### How It Works
+
+When an IAM Role is attached to EC2:
+
+1. The EC2 instance assumes the role.
+2. AWS provides temporary credentials.
+3. The AWS SDK automatically retrieves credentials from the Instance Metadata Service (IMDS).
+4. No manual key configuration is required.
+
+This is the recommended production architecture for AWS service-to-service access.
