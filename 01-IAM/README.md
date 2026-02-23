@@ -42,3 +42,33 @@ IAM consists of:
 | Credentials    | Long-term (Access Key + Secret Key)  | Temporary credentials                  |
 | Used For       | Human users or external apps         | AWS services, cross-account access     |
 | Security Level | Lower (manual key rotation required) | Higher (automatic credential rotation) |
+
+## 5️⃣ IAM Policies
+
+A policy is a JSON document that defines permissions.
+
+It specifies:
+
+- Effect (Allow or Deny)
+- Action (What operations are allowed/denied)
+- Resource (Which AWS resource)
+- Condition (Optional constraints)
+
+---
+
+### Example Policy
+
+```json
+{
+  "version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3.PutObject",
+      "Resource": "arn:aws:s3:::my-bucket/*"
+    }
+  ]
+}
+```
+
+This policy allows uploading objects to a specific S3 bucket.
