@@ -40,3 +40,29 @@ You upload code, and AWS handles:
 - SQS (queue messages)
 - EventBridge (scheduled jobs)
 - DynamoDB Streams
+
+---
+
+## 5️⃣ Cold Start in Lambda
+
+A cold start occurs when AWS Lambda needs to create a new execution environment before running the function.
+
+During a cold start:
+
+- Runtime (Node.js) is initialized
+- Dependencies are loaded
+- Function code is prepared for execution
+
+This introduces additional latency to the first request.
+
+### When Cold Starts Happens
+
+- First invocation
+- After a long idle period
+- During sudden traffic spikes
+- After deployment updates
+
+### Impact
+
+Cold starts mainly affect user-facing APIs.
+They are les impactful for background or asynchronous tasks.
